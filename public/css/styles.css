@@ -1,0 +1,779 @@
+/* -----------------------------------------------------------------------------
+
+                    header.html, default.html & footer.html
+
+----------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(55,55,55,1);
+}
+
+header {
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 18vw;
+    padding-left: 2.6vw;
+    background: #fff;
+}
+
+header #title {
+    text-decoration: none;
+    font-size: 10vw;
+    font-weight: 100;
+    color: rgba(55,55,55,1);
+}
+
+header #subtitle {
+    position: absolute;
+    left: 2.9vw;
+    bottom: 0;
+    font-size: 5vw;
+    font-weight: 50;
+    color: rgba(0,255,255,1);
+}
+
+main {
+    position: relative;
+    width: 100%;
+    min-height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: transparent;
+    font-size: 13vw;
+    font-weight: 100;
+    line-height: 1.2em;
+    -webkit-text-stroke: 1px #fff;
+}
+
+ul li a:hover {
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    transition: 0.5s;
+}
+
+ul li a:before, ul li a:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+ul li a:hover:before {
+    color: rgba(255,55,90,1);
+    -webkit-text-stroke: 1px #000;
+    z-index: 1;
+    transform: translate(10px, -10px);
+}
+
+ul li a:hover:after {
+    color: rgba(0,255,255,1);
+    -webkit-text-stroke: 1px #000;
+    z-index: 2;
+    transform: translate(20px, -20px);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4vw;
+    padding-right: 12vw;
+}
+
+footer #author {
+    float: right;
+    font-size: 2vw;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(255,55,90,1);
+}
+
+footer #author span {
+    float: right;
+    font-size: 2vw;
+    color: rgba(255,55,90,1);
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                                meteogalicia.html
+
+----------------------------------------------------------------------------- */
+
+#meteogalicia{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#meteogalicia h3 {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    font-size: 3.6vw;
+    /*background: #003;*/
+    font-family: 'Bad Script', cursive;
+    color: #111;
+}
+
+#meteogalicia h3 span {
+    display: table-cell;
+    animation: animatename 2s linear infinite;
+}
+
+#meteogalicia h3 span:nth-child(1) {animation-delay: 0s;}
+#meteogalicia h3 span:nth-child(2) {animation-delay: 0.3s;}
+#meteogalicia h3 span:nth-child(3) {animation-delay: 0.6s;}
+#meteogalicia h3 span:nth-child(4) {animation-delay: -0.3s;}
+#meteogalicia h3 span:nth-child(5) {animation-delay: 0s;}
+#meteogalicia h3 span:nth-child(6) {animation-delay: 0.3s;}
+#meteogalicia h3 span:nth-child(7) {animation-delay: 0.6s;}
+#meteogalicia h3 span:nth-child(8) {animation-delay: 0.6s;}
+
+@keyframes animatename {
+    0%, 100% {
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff/*,
+                     0 0 20px #00b3ff,
+                     0 0 40px #00b3ff,
+                     0 0 80px #00b3ff,
+                     0 0 160px #00b3ff*/;
+    }
+    8%, 92% {
+        color: #111;
+        filter: blur(0px);
+        text-shadow: 0 0 10px none;
+    }
+}
+
+#meteogalicia div {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1%;
+    color: #fff;
+    /*background-color: #f0f8ff;*/
+}
+
+#meteogalicia fieldset#resultado {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: #1998cc;
+    color: #fff;
+}
+
+#meteogalicia fieldset#resultado:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/rain.png);
+    background-size: cover;
+    animation: rain 0.8s linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% -1000%;
+    }
+}
+
+#meteogalicia section#datos {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0099cc;
+    font-size: 2.5vw;
+    line-height: 2;
+}
+
+#meteogalicia input#calcular {
+    margin-left: 2.8vw;
+    visibility: hidden;
+}
+
+#meteogalicia input[type='button'], input[type='file'] {
+    color: #0099cc;
+    background: transparent;
+    border: 2px solid #0099cc;
+    border-radius: 6px;
+}
+
+#meteogalicia input[type='button']:hover {
+    background-color: #008cba;
+    color: #fff;
+}
+
+#meteogalicia input[type='button']:focus {
+    outline: none;
+}
+
+#meteogalicia ul#operaciones {
+    padding-left: 25px;
+    list-style-type: none;
+    display: none;
+}
+
+#meteogalicia b.sinDatos {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+#meteogalicia fieldset#chartsContainer {
+    width: 100%;
+    padding: 0.5% 0 0.5% 0.5%;
+    margin-top: 10px;
+    overflow: hidden;
+    background-color: #1998cc;
+}
+
+#meteogalicia fieldset#chartsContainer div {
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-right: 0.5%;
+    float: left;
+}
+
+#meteogalicia div.mainBox {
+    width: 99.5%;
+}
+
+#meteogalicia div.secondaryBox {
+    width: 49.5%;
+    margin-top: 0.5%;
+}
+
+#meteogalicia #contenido-archivo {
+    font-size: 2vw;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                                tictactoe.html
+
+----------------------------------------------------------------------------- */
+        
+#tictactoe {
+    font-family: 'Indie Flower', cursive;
+}
+
+#tictactoe h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+}
+
+#tictactoe #board {
+    position: relative;
+    overflow: hidden;
+    width: 57vw;
+    height: 57vw;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 25% 25% 25% 25% / 50% 30% 60% 40%;
+}
+
+#tictactoe #board div {
+    box-sizing: border-box;
+    float: left;
+    width: 19vw;
+    height: 19vw;
+    font-size: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#tictactoe #board #b1 {border-right: 1px solid #fff; border-left: 1px solid #fff;}
+#tictactoe #board #b3 {border-top: 1px solid #fff; border-bottom: 1px solid #fff;}
+#tictactoe #board #b4 {border: 1px solid #fff;}
+#tictactoe #board #b5 {border-top: 1px solid #fff; border-bottom: 1px solid #fff;}
+#tictactoe #board #b7 {border-right: 1px solid #fff; border-left: 1px solid #fff;}
+
+#tictactoe #turn {
+    text-align: center;
+    font-size: 6vw;
+    color: #fff;
+}
+
+#tictactoe #reload_btn, #hangman #reload_btn {
+    display: none;
+    margin: 2vw 0 0 50%;
+    transform: translateX(-50%);
+    padding: 0 3vw;
+    border: 1px solid #fff;
+    border-radius: 73% 27% 44% 56% / 49% 44% 56% 51%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 4.4vw;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+}
+
+#tictactoe #reload_btn:hover, #hangman #reload_btn:hover {
+    background-color: #fff;
+    color: rgba(55,55,55,1);
+}
+
+#tictactoe #reload_btn:focus, #hangman #reload_btn:focus {
+    outline: none;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                                hangman.html
+
+----------------------------------------------------------------------------- */
+
+#barrel {
+    position: absolute;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 45vw;
+    height: 75vw;
+    border-radius: 22.5vw/11.25vw;
+    background-color: rgba(160, 160, 160, 0.5);
+}
+
+#barrel:before, #barrel:after, #water:before, #water:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 45vw;
+    height: 22.5vw;
+    border-radius: 22.5vw/11.25vw;
+}
+
+#barrel:before {
+    top: 0;
+    background-color: rgba(160, 160, 160, 0.2);
+}
+
+#barrel:after {
+    bottom: 0;
+    background-color: rgba(160, 160, 160, 0.4);
+}
+
+#water {
+    position: absolute;
+    left: 0;
+    bottom: -22.5vw;
+    width: 45vw;
+    height: 0;
+    padding-top: 22.5vw;
+    border-radius: 22.5vw/11.25vw;
+    background-color: rgba(0, 160, 160, 0.5);
+    transition: 0.3s linear;
+}
+
+#water:before {
+    top: 0;
+    background-color: rgba(0, 160, 160, 0.2);
+}
+
+#water:after {
+    bottom: 0;
+    background-color: rgba(0, 160, 160, 0.4);
+}
+
+#hangman {
+    font-family: 'Indie Flower', cursive;
+}
+
+#hangman #word-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+#hangman #word-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.7vw;
+    height: 4.7vw;
+    margin: 0 0.3vw;
+    font-size: 4vw;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 2;
+}
+
+#hangman #keyboard {
+    position: fixed;
+    bottom: 15px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#hangman #keyboard > div {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#hangman #keyboard #r0 {transform: translate(-1.5vw);}
+#hangman #keyboard #r2 {transform: translate(-12.5vw);}
+
+#hangman #keyboard > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.8vw;
+    height: 7.8vw;
+    margin: 0.7vw;
+    border: 1px solid #000;
+    border-radius: 10%;
+    font-size: 4vw;
+    color: #fff;
+    cursor: pointer;
+}
+
+#hangman #keyboard > div > div:hover {
+    background: #000;
+}
+
+
+
+
+/* -----------------------------------------------------------------------------
+
+                                coincidences.html
+
+----------------------------------------------------------------------------- */
+
+#coincidences {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#coincidences #board {
+    display: flex;
+    flex-direction: column;
+    width: 65vw;
+    height: 78vw;
+}
+
+#coincidences #board > div {
+    display: flex;
+}
+
+#coincidences #board > div > div {
+    box-sizing: border-box;
+    width: 12vw;
+    height: 12vw;
+    margin: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vw;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #402060;
+    cursor: pointer;
+}
+
+#segunder_box {
+    width: 20vw;
+    height: 8vw;
+    margin-bottom: 2vw;
+    font-size: 6vw;
+    color: #fff;
+}
+
+#seconds, #centiseconds {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    height: 100%;
+}
+
+#seconds {
+    justify-content: flex-end;
+    float: left;
+}
+
+#centiseconds {
+    justify-content: flex-start;
+    float: right;
+}
+
+#coincidences #action_btn {
+    z-index: 2;
+    cursor: pointer;
+    margin-top: 2vw;
+    padding: 0 3vw;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 4.4vw;
+    color: #fff;
+    background: transparent;
+}
+
+#coincidences #action_btn:hover {
+    background-color: #fff;
+    color: rgba(55,55,55,1);
+}
+
+#coincidences #action_btn:focus {
+    outline: none;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                                form.html
+
+----------------------------------------------------------------------------- */
+
+#valform label {
+    width: 196px;
+    height: 25px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+#valform input, #valform select {
+    width: 196px;
+    height: 25px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+#valform fieldset {
+    background: #66CCCC;
+    width: 400px;
+    border: thick solid #306;
+}
+
+#valform legend {
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: #FFF;
+}
+
+#valform #mensajes {
+    float: left;
+    background: #33FF33;
+    width: 325px;
+}
+
+#valform #errores {
+    float: left;
+    background: #FF6633;
+    width: 400px;
+}
+
+#valform #intentos {
+    float: left;
+    background: #CCFF33;
+    width: 400px;
+}
+
+#valform .error {
+    border: solid 2px #FF0000;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                                Media Queries
+
+----------------------------------------------------------------------------- */
+
+@media screen and (orientation:landscape) {
+    header {
+        height: 15vh;
+        padding-left: 2.6vh;
+    }
+
+    header #title {
+        font-size: 10vh;
+    }
+
+    header #subtitle {
+        position: static;
+        padding-left: 1vh;
+        font-size: 5vh;
+    }
+    
+    main {
+        min-height: 81vh;
+    }
+
+    ul li a {
+        font-size: 13vh;
+    }
+
+    footer {
+        height: 4vh;
+        padding-right: 12vh;
+    }
+
+    footer #author, footer #author span {
+        font-size: 2vh;
+    }
+    
+    #meteogalicia h3 {
+        font-size: 3.6vh;
+    }
+
+    #meteogalicia section#datos {
+        font-size: 2.5vh;
+    }
+
+    #meteogalicia input#calcular {
+        margin-left: 2.8vh;
+    }
+
+    #meteogalicia #contenido-archivo {
+        font-size: 2vh;
+    }
+    
+    #tictactoe h1 {
+        font-size: 0;
+    }
+    
+    #tictactoe #board {
+        width: 57vh;
+        height: 57vh;
+    }
+    
+    #tictactoe #board div {
+        width: 19vh;
+        height: 19vh;
+        font-size: 15vh;
+    }
+    
+    #tictactoe #turn {
+        font-size: 6vh;
+    }
+    
+    #tictactoe #reload_btn, #hangman #reload_btn {
+        margin: 2vh 0 0 50%;
+        padding: 0 3vh;
+        font-size: 4.4vh;
+    }
+    
+    #barrel {
+        width: 45vh;
+        height: 75vh;
+        border-radius: 22.5vh/11.25vh;
+    }
+
+    #barrel:before, #barrel:after, #water:before, #water:after {
+        width: 45vh;
+        height: 22.5vh;
+        border-radius: 22.5vh/11.25vh;
+    }
+
+    #water {
+        bottom: -22.5vh;
+        width: 45vh;
+        padding-top: 22.5vh;
+        border-radius: 22.5vh/11.25vh;
+    }
+
+    #hangman #word-container {
+        width: 100vh;
+    }
+    
+    #hangman #word-container > div {
+        width: 4.7vh;
+        height: 4.7vh;
+        margin: 0 0.3vh;
+        font-size: 4vh;
+    }
+
+    #hangman #keyboard #r0 {transform: translate(-1.5vh);}
+    #hangman #keyboard #r2 {transform: translate(-12.5vh);}
+    
+    #hangman #keyboard > div > div {
+        width: 7.8vh;
+        height: 7.8vh;
+        margin: 0.7vh;
+        font-size: 4vh;
+    }
+
+    #coincidences #board {
+        width: 65vh;
+        height: 78vh;
+    }
+
+    #coincidences #board > div > div {
+        width: 12vh;
+        height: 12vh;
+        margin: 0.5vh;
+        font-size: 7vh;
+    }
+
+    #segunder_box {
+        width: 20vh;
+        height: 8vh;
+        margin-bottom: 2vh;
+        font-size: 6vh;
+    }
+
+    #coincidences #action_btn {
+        margin-top: 2vh;
+        padding: 0 3vh;
+        font-size: 4.4vh;
+    }
+}
